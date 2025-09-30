@@ -1,0 +1,27 @@
+-> print name 5 times
+-> print linearly from 1 to n
+  -Ans  f(1,N)    {N=4}
+          {if(i<N){
+          return;
+          print(i)
+          f(i+1,N)
+          }
+          main(){
+          input(N)
+          f(1,N)
+          }
+-> print from n to 1
+   f(N , 1)
+    {if(i<1){
+    return
+    print(i)
+    f(i-1, N)
+    }
+    main(){
+    input(N)
+    f(i,N)
+    }
+->print linearly from 1 to n(back track)
+->Sum of first n number
+->Factorial of n number
+->Reverse an array

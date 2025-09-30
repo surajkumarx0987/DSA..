@@ -1,0 +1,83 @@
+Recursion -> When a function call itself until a specified condition is met.
+Why recursion ?
+   - solving bigger/complex problem in a simple way
+   - we can convert recursion solution into iterative and vice-versa
+   - space complexity is not same because of recursion
+   - breaking down bigger problem into smaller problem
+
+Base Condition -> In recursion condition where our recursion will stop making new calls.
+No base condition -> function will call again and again , stack will be filled again and again will take some memory
+                     then stack overflow happens.
+
+ Note: while function is not finishing execution it will remain in stack.
+
+#One function is call another but using recursion we don't write large code
+public class NumberExample {
+    public static void main(String[] args) {
+        print(1);
+
+    }
+    static void print(int n){
+        System.out.println(n);
+        print2(2);
+    }
+    static void print2(int n){
+        System.out.println(n);
+        print3(3);
+    }
+    static void print3(int n){
+        System.out.println(n);
+    }
+}
+
+#Recursion function for same
+         public class RecursionF {
+             public static void main(String[] args) {
+                 print(1);
+
+             }
+             static void print(int n){
+                 System.out.println(n);
+                 if(n==5){     // base condition
+                     return;
+                 }
+                 //this is called tail recursion
+                 print(n+1);
+             }
+         }
+
+    #Fibonacci Number -> 0,1,1,2,5,8,13,21....
+       Fibonacci Recursion -> F(n)=F(n−1)+F(n−2)
+         Tree for F(5):
+                                    F(5)
+                               /           \
+                           F(4)             F(3)
+                         /     \          /      \
+                      F(3)     F(2)   F(2)     F(1)
+                      /   \    / \    / \
+                    F(2) F(1)F(1)F(0)F(1)F(0)
+
+    # How to understand and approach a problem.
+      1->Identify if you can break down problem into smaller problems.
+      2->write the recurrence relation if needed.
+      3->Draw the recursive tree.
+      4->About the tree.
+         -See the flow of the function, how they are getting in stack.
+         -Identify & Focus on left tree calls & right tree calls.
+         -draw the tree and pointer again & again using pen & paper.
+         -use debugger.
+      5->See how the values are return at each steps.
+
+    #Types of recurrence relation.     ->two
+      1)Linear Recurrence Relation -> like fibo..
+      2)Divide & Conquer Recurrence Relation -> binary search..
+
+    #Reverse of an array
+    [2,3,5,2,8]    two pointers    [8,2,5,3,2]
+     |        |                     |        |
+     l         r                    r         l
+        f(l,r){
+          if (l>=r) return;
+          swap(a[l],ar]);
+          f(l+1,r+1);
+        }
